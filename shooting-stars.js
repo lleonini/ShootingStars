@@ -78,9 +78,10 @@ var ShootingStars = {
 		}
 	},
 
-	launch: function (interval, container, obj) {
+	launch: function (interval, container, obj, id) {
 		obj = obj || this;
-		obj.launchStar(container, 0);
-		setTimeout(obj.launch, interval, interval, container, obj);
+		id = id + 1 || 1;
+		obj.launchStar(container, id);
+		setTimeout(obj.launch, interval, interval, container, obj, id);
 	}
 }
